@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <form action="/dashboard" method="post">
+            <label for="program">Select Program:</label>
+            <select id="program" name="program">
+                {% for program in programs %}
+                <option value="{{ program }}">{{ program }}</option>
+                {% endfor %}
+            </select>
+            <div class="chatbox">
+                <label for="user_input">Enter your natural language questions:</label>
+                <textarea id="user_input" name="user_input" rows="4" cols="50"></textarea>
+                <input type="submit" value="Generate Test Cases">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
